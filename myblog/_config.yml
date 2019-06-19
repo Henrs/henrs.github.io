@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 小帅哥 | Henrs
 subtitle:
-description:
+description: 安安静静写代码， 要什么自行车
 keywords:
-author: John Doe
-language:
+author: Henrs
+language: zh_CN
 timezone:
 
 # URL
@@ -30,7 +30,7 @@ skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
-default_layout: post
+default_layout: page
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
@@ -73,11 +73,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:git
-  repo:git@github.com:Henrs/henrs.github.io.git
-  branch:master
+  type: git
+  repo: git@github.com:Henrs/henrs.github.io.git
+  branch: master
