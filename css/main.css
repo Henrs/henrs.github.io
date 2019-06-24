@@ -1651,7 +1651,7 @@ pre .javascript .function {
 }
 .sidebar {
   position: fixed;
-  right: 0;
+  left: 0;
   top: 0;
   bottom: 0;
   width: 0;
@@ -1703,7 +1703,7 @@ pre .javascript .function {
 }
 .sidebar-toggle {
   position: fixed;
-  right: 30px;
+  left: 30px;
   bottom: 45px;
   width: 14px;
   height: 14px;
@@ -1777,7 +1777,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffc94f;
+  background: #ffff9d;
 }
 .feed-link,
 .chat {
@@ -1955,7 +1955,7 @@ pre .javascript .function {
   color: #87daff;
 }
 .sidebar-active + #sidebar-dimmer {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 @media (max-width: 767px) {
   .sidebar-active + #sidebar-dimmer {
