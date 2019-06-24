@@ -144,7 +144,7 @@ $(document).ready(function() {
         duration: SIDEBAR_DISPLAY_DURATION,
         begin   : function() {
           $('.sidebar .motion-element').not('.site-state').velocity(
-            'transition.slideRightIn', {
+            'transition.slideLeftIn', {
               stagger : 50,
               drag    : true,
               complete: function() {
