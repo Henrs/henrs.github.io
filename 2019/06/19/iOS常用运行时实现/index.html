@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="基本概念散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。 常用方法散列函数能使对一个数据序列的访问过程更加迅速有效，通过散列函数，数据元素将被更快地定位。实际工作中需视不同的情况采用不同的哈希函数，通常考虑的因素有：">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="iOS常用运行时实现1.判断子类是不是覆盖了父类的方法思路：  通过class_getInstanceMethod去获取目标方法 判断方法是否存在，如果不存在，就没有意义了 通过class_getSuperclass获取父类，然后class_getInstanceMethod拿取父类的Method 判断父类拿取的这个方法是否存在，如果父类没有,或者父类的实现Method跟子类不一样，那么子类已经覆">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="哈希表">
-<meta property="og:url" content="http://yoursite.com/2018/06/19/哈希表/index.html">
+<meta property="og:title" content="iOS常用运行时实现">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/iOS常用运行时实现/index.html">
 <meta property="og:site_name" content="小帅哥 | Henrs">
-<meta property="og:description" content="基本概念散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。 常用方法散列函数能使对一个数据序列的访问过程更加迅速有效，通过散列函数，数据元素将被更快地定位。实际工作中需视不同的情况采用不同的哈希函数，通常考虑的因素有：">
+<meta property="og:description" content="iOS常用运行时实现1.判断子类是不是覆盖了父类的方法思路：  通过class_getInstanceMethod去获取目标方法 判断方法是否存在，如果不存在，就没有意义了 通过class_getSuperclass获取父类，然后class_getInstanceMethod拿取父类的Method 判断父类拿取的这个方法是否存在，如果父类没有,或者父类的实现Method跟子类不一样，那么子类已经覆">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-24T01:31:32.723Z">
+<meta property="og:updated_time" content="2019-06-25T08:53:09.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="哈希表">
-<meta name="twitter:description" content="基本概念散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。 常用方法散列函数能使对一个数据序列的访问过程更加迅速有效，通过散列函数，数据元素将被更快地定位。实际工作中需视不同的情况采用不同的哈希函数，通常考虑的因素有：">
+<meta name="twitter:title" content="iOS常用运行时实现">
+<meta name="twitter:description" content="iOS常用运行时实现1.判断子类是不是覆盖了父类的方法思路：  通过class_getInstanceMethod去获取目标方法 判断方法是否存在，如果不存在，就没有意义了 通过class_getSuperclass获取父类，然后class_getInstanceMethod拿取父类的Method 判断父类拿取的这个方法是否存在，如果父类没有,或者父类的实现Method跟子类不一样，那么子类已经覆">
 
 
 
@@ -122,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2018/06/19/哈希表/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/19/iOS常用运行时实现/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>哈希表 | 小帅哥 | Henrs</title>
+  <title>iOS常用运行时实现 | 小帅哥 | Henrs</title>
   
 
 
@@ -358,7 +358,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/哈希表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/iOS常用运行时实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Henrs">
@@ -375,7 +375,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">哈希表
+          <h1 class="post-title" itemprop="name headline">iOS常用运行时实现
 
               
             
@@ -401,7 +401,7 @@
                 
               
 
-              <time title="Created: 2018-06-19 17:04:39" itemprop="dateCreated datePublished" datetime="2018-06-19T17:04:39+08:00">2018-06-19</time>
+              <time title="Created: 2019-06-19 19:11:44" itemprop="dateCreated datePublished" datetime="2019-06-19T19:11:44+08:00">2019-06-19</time>
             
 
             
@@ -418,7 +418,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-24 09:31:32" itemprop="dateModified" datetime="2019-06-24T09:31:32+08:00">2019-06-24</time>
+                <time title="Modified: 2019-06-25 16:53:09" itemprop="dateModified" datetime="2019-06-25T16:53:09+08:00">2019-06-25</time>
               
             
           </span>
@@ -452,73 +452,30 @@
       
 
       
-        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。</p>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p>散列函数能使对一个数据序列的访问过程更加迅速有效，通过散列函数，数据元素将被更快地定位。<br>实际工作中需视不同的情况采用不同的哈希函数，通常考虑的因素有：</p>
+        <h2 id="iOS常用运行时实现"><a href="#iOS常用运行时实现" class="headerlink" title="iOS常用运行时实现"></a>iOS常用运行时实现</h2><h5 id="1-判断子类是不是覆盖了父类的方法"><a href="#1-判断子类是不是覆盖了父类的方法" class="headerlink" title="1.判断子类是不是覆盖了父类的方法"></a>1.判断子类是不是覆盖了父类的方法</h5><p>思路：</p>
 <ul>
-<li>计算哈希函数所需时间</li>
-<li>关键字的长度</li>
-<li>哈希表的大小</li>
-<li>关键字的分布情况</li>
-<li>记录的查找频率</li>
+<li>通过class_getInstanceMethod去获取目标方法</li>
+<li>判断方法是否存在，如果不存在，就没有意义了</li>
+<li>通过class_getSuperclass获取父类，然后class_getInstanceMethod拿取父类的Method</li>
+<li>判断父类拿取的这个方法是否存在，如果父类没有,或者父类的实现Method跟子类不一样，那么子类已经覆盖了父类</li>
 </ul>
-<h5 id="1-直接寻址法"><a href="#1-直接寻址法" class="headerlink" title="1 直接寻址法"></a>1 直接寻址法</h5><p>取关键字或关键字的某个线性函数值为散列地址。即H(key)=key或H(key) = a·key + b，其中a和b为常数（这种散列函数叫做自身函数）。若其中H(key）中已经有值了，就往下一个找，直到H(key）中没有值了，就放进去。</p>
-<h5 id="2-数字分析法"><a href="#2-数字分析法" class="headerlink" title="2 数字分析法"></a>2 数字分析法</h5><p>分析一组数据，比如一组员工的出生年月日，这时我们发现出生年月日的前几位数字大体相同，这样的话，出现冲突的几率就会很大，但是我们发现年月日的后几位表示月份和具体日期的数字差别很大，如果用后面的数字来构成散列地址，则冲突的几率会明显降低。因此数字分析法就是找出数字的规律，尽可能利用这些数据来构造冲突几率较低的散列地址。</p>
-<h5 id="3-平方取中法"><a href="#3-平方取中法" class="headerlink" title="3 平方取中法"></a>3 平方取中法</h5><p>当无法确定关键字中哪几位分布较均匀时，可以先求出关键字的平方值，然后按需要取平方值的中间几位作为哈希地址。这是因为：平方后中间几位和关键字中每一位都相关，故不同关键字会以较高的概率产生不同的哈希地址</p>
-<p>eg:</p>
-<p>我们把英文字母在字母表中的位置序号作为该英文字母的内部编码。例如K的内部编码为11，E的内部编码为05，Y的内部编码为25，A的内部编码为01, B的内部编码为02。由此组成关键字“KEYA”的内部代码为11052501，同理我们可以得到关键字“KYAB”、“AKEY”、“BKEY”的内部编码。之后对关键字进行平方运算后，取出第7到第9位作为该关键字哈希地址，如下图所示</p>
-<table>
-<thead>
-<tr>
-<th>关键字</th>
-<th>内部编码</th>
-<th>内部编码的平方值</th>
-<th>H(k)关键字的哈希地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>KEYA</td>
-<td>11052501</td>
-<td>122157778355001</td>
-<td>778</td>
-</tr>
-<tr>
-<td>KYAB</td>
-<td>11250102</td>
-<td>126564795010404</td>
-<td>795</td>
-</tr>
-<tr>
-<td>AKEY</td>
-<td>01110525</td>
-<td>001233265775625</td>
-<td>265</td>
-</tr>
-<tr>
-<td>BKEY</td>
-<td>02110525</td>
-<td>004454315775625</td>
-<td>315</td>
-</tr>
-</tbody></table>
-<h5 id="4-折叠法"><a href="#4-折叠法" class="headerlink" title="4 折叠法"></a>4 折叠法</h5><p>将关键字分割成位数相同的几部分，最后一部分位数可以不同，然后取这几部分的叠加和（去除进位）作为散列地址。数位叠加可以有移位叠加和间界叠加两种方法。移位叠加是将分割后的每一部分的最低位对齐，然后相加；间界叠加是从一端向另一端沿分割界来回折叠，然后对齐相加。</p>
-<h5 id="5-随机数法"><a href="#5-随机数法" class="headerlink" title="5 随机数法"></a>5 随机数法</h5><p>选择一随机函数，取关键字的随机值作为散列地址，通常用于关键字长度不同的场合</p>
-<h5 id="6-除留余数法"><a href="#6-除留余数法" class="headerlink" title="6 除留余数法"></a>6 除留余数法</h5><p>取关键字被某个不大于散列表表长m的数p除后所得的余数为散列地址。即 H(key) = key MOD p,p&lt;=m。不仅可以对关键字直接取模，也可在折叠、平方取中等运算之后取模。对p的选择很重要，一般取素数或m，若p选的不好，容易产生同义词.</p>
-<h3 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h3><p>对不同的关键字可能得到同一散列地址，即k1≠k2，而f(k1)=f(k2)，这种现象称为冲突（英语：Collision）。</p>
-<p>若对于关键字集合中的任一个关键字，经散列函数映象到地址集合中任何一个地址的概率是相等的，则称此类散列函数为均匀散列函数（Uniform Hash function），这就是使关键字经过散列函数得到一个“随机的地址”，从而减少冲突。</p>
-<p>将一组关键字映射到一个有限的连续的地址集（区间）上，并以关键字在地址集中的“像”作为记录在表中的存储位置，这种表便称为散列表，这一映射过程称为散列造表或散列，所得的存储位置称散列地址。</p>
-<h5 id="1-开放寻址法"><a href="#1-开放寻址法" class="headerlink" title="1  开放寻址法"></a>1  开放寻址法</h5><p>Hi=(H(key) + di) MOD m,i=1,2，…，k(k&lt;=m-1），其中H(key）为散列函数，m为散列表长，di为增量序列，可有下列三种取法：</p>
-<p>1.1. di=1,2,3，…，m-1，称线性探测再散列；</p>
-<p>1.2. di=1^2,-1^2,2^2,-2^2，⑶^2，…，±（k)^2,(k&lt;=m/2）称二次探测再散列；</p>
-<p>1.3. di=伪随机数序列，称伪随机探测再散列。</p>
-<h5 id="2-再散列法"><a href="#2-再散列法" class="headerlink" title="2 再散列法"></a>2 再散列法</h5><p>Hi=RHi(key),i=1,2，…，k RHi均是不同的散列函数，即在同义词产生地址冲突时计算另一个散列函数地址，直到冲突不再发生，这种方法不易产生“聚集”，但增加了计算时间</p>
-<h5 id="3-链地址法（拉链法）"><a href="#3-链地址法（拉链法）" class="headerlink" title="3  链地址法（拉链法）"></a>3  链地址法（拉链法）</h5><h5 id="4-建立一个公共溢出区"><a href="#4-建立一个公共溢出区" class="headerlink" title="4  建立一个公共溢出区"></a>4  建立一个公共溢出区</h5><h3 id="查找性能"><a href="#查找性能" class="headerlink" title="查找性能"></a>查找性能</h3><p>散列表的查找过程基本上和造表过程相同。一些关键码可通过散列函数转换的地址直接找到，另一些关键码在散列函数得到的地址上产生了冲突，需要按处理冲突的方法进行查找。在介绍的三种处理冲突的方法中，产生冲突后的查找仍然是给定值与关键码进行比较的过程。所以，对散列表查找效率的量度，依然用平均查找长度来衡量。</p>
-<p>查找过程中，关键码的比较次数，取决于产生冲突的多少，产生的冲突少，查找效率就高，产生的冲突多，查找效率就低。因此，影响产生冲突多少的因素，也就是影响查找效率的因素。影响产生冲突多少有以下三个因素：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">inline</span> <span class="built_in">BOOL</span> isHasOverrideSuperclassMethod(Class targetClass, SEL targetSelector) &#123;</span><br><span class="line">    Method method = class_getInstanceMethod(targetClass,targetSelector);</span><br><span class="line">    <span class="keyword">if</span> (!method) <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    Method methodOfSuperClass = class_getInstanceMethod(class_getSuperClass(targetClass),targetSelector)</span><br><span class="line">    <span class="keyword">if</span> (!methodOfSuperClass) <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    <span class="keyword">return</span> method != methodOfSuperClass;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-交换两个类的两个方法实现"><a href="#2-交换两个类的两个方法实现" class="headerlink" title="2.交换两个类的两个方法实现"></a>2.交换两个类的两个方法实现</h5><p>思路：</p>
 <ul>
-<li>散列函数是否均匀；</li>
-<li>处理冲突的方法；</li>
-<li>散列表的装填因子。</li>
+<li>分别获取两个类的两个方法，通过class_getInstanceMethod,</li>
+<li>尝试将第二个类的方法实现添加到第一个类，如果成功了说明第一个类没有实现对应的方法，这时候要加上空的方法实现，避免第二个类去调用的时候crash</li>
+<li>通过method_exchangeImplementations交换两个方法的实现</li>
 </ul>
-<p>散列表的装填因子定义为：α= 填入表中的元素个数 / 散列表的长度</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">inline</span> <span class="built_in">BOOL</span> ExchangeImplementationsInTwoClass(Class fromClass,SEL originSelector,Class toClass, SEL newSelector)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!fromClass || !toClass) <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    Method originMethod = class_getInstanceMethod(fromClass,originSelector);</span><br><span class="line">    Method newMethod = class_getInstanceMethod(toClass,newSelector);</span><br><span class="line">    <span class="comment">// 如果想交换的新的方法都不在，那么也没意义了</span></span><br><span class="line">    <span class="keyword">if</span> (!newMethod) <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">BOOL</span> isAddedNewMethod = class_addMethod(fromClass,originSelector,method_getImplementation(newMethod),method_getTypeEncoding(newMethod));</span><br><span class="line">    <span class="keyword">if</span> (isAddedNewMethod) &#123;</span><br><span class="line">        IMP originIMP = method_getImplementation(originMethod) ?: imp_implementationWithBlock(^(<span class="keyword">id</span> selfObicet) &#123;&#125;);</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span> *originMethonTypeEncoding = method_getTypeEncoding(originMethod) ?: <span class="string">"v@:"</span></span><br><span class="line">        class_repalceMethod(toClass,newSelector,originIMP,originMethonTypeEncoding)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        method_exchangeImplementations(originMethod,newMethod)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-交换一个class的两个实现"><a href="#3-交换一个class的两个实现" class="headerlink" title="3.交换一个class的两个实现"></a>3.交换一个class的两个实现</h5><p>思路：</p>
+<ul>
+<li>与交换两个class的逻辑一样，也需要判断方法存在，不存在添加等操作</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">inline</span> <span class="built_in">BOOL</span> ExchangeImplementations(Class <span class="keyword">class</span>, SEL originSelector, SEL newSelector) &#123;</span><br><span class="line">    <span class="comment">// 使用上面的交换两个类的实现的方法</span></span><br><span class="line">    <span class="keyword">return</span> ExchangeImplementationsInTwoClass(<span class="keyword">class</span>,originSelector,<span class="keyword">class</span>,newSelector)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>》  待更新</p>
 
       
     </div>
@@ -553,7 +510,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="http://yoursite.com/2018/06/19/哈希表/" title="哈希表">http://yoursite.com/2018/06/19/哈希表/</a>
+    <a href="http://yoursite.com/2019/06/19/iOS常用运行时实现/" title="iOS常用运行时实现">http://yoursite.com/2019/06/19/iOS常用运行时实现/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
@@ -569,7 +526,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
         </div>
       
@@ -582,8 +539,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/11/MASUtilities.h/" rel="next" title="MAS源码之工具类MASUtilities.h">
-                <i class="fa fa-chevron-left"></i> MAS源码之工具类MASUtilities.h
+              <a href="/2019/05/21/设计模式/" rel="next" title="设计模式">
+                <i class="fa fa-chevron-left"></i> 设计模式
               </a>
             
           </div>
@@ -591,10 +548,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/29/组件化准备工作之CocoaPods私有库创建/" rel="prev" title="cocoaPods私有库的创建">
-                cocoaPods私有库的创建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -748,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-number">2.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-直接寻址法"><span class="nav-number">2.0.1.</span> <span class="nav-text">1 直接寻址法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-数字分析法"><span class="nav-number">2.0.2.</span> <span class="nav-text">2 数字分析法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-平方取中法"><span class="nav-number">2.0.3.</span> <span class="nav-text">3 平方取中法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-折叠法"><span class="nav-number">2.0.4.</span> <span class="nav-text">4 折叠法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-随机数法"><span class="nav-number">2.0.5.</span> <span class="nav-text">5 随机数法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-除留余数法"><span class="nav-number">2.0.6.</span> <span class="nav-text">6 除留余数法</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#冲突处理"><span class="nav-number">3.</span> <span class="nav-text">冲突处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-开放寻址法"><span class="nav-number">3.0.1.</span> <span class="nav-text">1  开放寻址法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-再散列法"><span class="nav-number">3.0.2.</span> <span class="nav-text">2 再散列法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-链地址法（拉链法）"><span class="nav-number">3.0.3.</span> <span class="nav-text">3  链地址法（拉链法）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-建立一个公共溢出区"><span class="nav-number">3.0.4.</span> <span class="nav-text">4  建立一个公共溢出区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找性能"><span class="nav-number">4.</span> <span class="nav-text">查找性能</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS常用运行时实现"><span class="nav-number">1.</span> <span class="nav-text">iOS常用运行时实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-判断子类是不是覆盖了父类的方法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.判断子类是不是覆盖了父类的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-交换两个类的两个方法实现"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.交换两个类的两个方法实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-交换一个class的两个实现"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3.交换一个class的两个实现</span></a></li></ol></li></ol></div>
             
 
           </div>

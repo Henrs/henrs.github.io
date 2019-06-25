@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh_CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":true},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="设计模式计算机软件开发的设计模式按照一般说法主要有23种设计模式和7个设计原则，我们可以把他们简要的概括为3个基本的模式类型和一个设计原则，分别为 结构型模式，创建型模式，行为型模式 以及软件基本设计原则 结构型模式 适配器模式 桥接模式 组合模式 装饰模式 外观模式 享元模式 代理模式  创建型模式 抽象工厂模式 建造者模式 工厂方法模式 原型模式 单例模式  行为型模式 责任链模式 命令模式">
+<meta name="keywords" content="计算机思想">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/设计模式/index.html">
+<meta property="og:site_name" content="小帅哥 | Henrs">
+<meta property="og:description" content="设计模式计算机软件开发的设计模式按照一般说法主要有23种设计模式和7个设计原则，我们可以把他们简要的概括为3个基本的模式类型和一个设计原则，分别为 结构型模式，创建型模式，行为型模式 以及软件基本设计原则 结构型模式 适配器模式 桥接模式 组合模式 装饰模式 外观模式 享元模式 代理模式  创建型模式 抽象工厂模式 建造者模式 工厂方法模式 原型模式 单例模式  行为型模式 责任链模式 命令模式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-06-25T08:55:56.885Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式">
+<meta name="twitter:description" content="设计模式计算机软件开发的设计模式按照一般说法主要有23种设计模式和7个设计原则，我们可以把他们简要的概括为3个基本的模式类型和一个设计原则，分别为 结构型模式，创建型模式，行为型模式 以及软件基本设计原则 结构型模式 适配器模式 桥接模式 组合模式 装饰模式 外观模式 享元模式 代理模式  创建型模式 抽象工厂模式 建造者模式 工厂方法模式 原型模式 单例模式  行为型模式 责任链模式 命令模式">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/05/21/设计模式/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>设计模式 | 小帅哥 | Henrs</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小帅哥 | Henrs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">3</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">0</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">5</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/设计模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Henrs">
+      <meta itemprop="description" content="安安静静写代码， 要什么自行车">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小帅哥 | Henrs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">设计模式
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-21 08:55:15" itemprop="dateCreated datePublished" datetime="2019-05-21T08:55:15+08:00">2019-05-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-25 16:55:56" itemprop="dateModified" datetime="2019-06-25T16:55:56+08:00">2019-06-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><p>计算机软件开发的设计模式按照一般说法主要有23种设计模式和7个设计原则，我们可以把他们简要的概括为3个基本的模式类型和一个设计原则，分别为 <strong>结构型模式</strong>，<strong>创建型模式</strong>，<strong>行为型模式</strong> 以及软件基本<strong>设计原则</strong></p>
+<h3 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h3><ul>
+<li>适配器模式</li>
+<li>桥接模式</li>
+<li>组合模式</li>
+<li>装饰模式</li>
+<li>外观模式</li>
+<li>享元模式</li>
+<li>代理模式</li>
+</ul>
+<h3 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h3><ul>
+<li>抽象工厂模式</li>
+<li>建造者模式</li>
+<li>工厂方法模式</li>
+<li>原型模式</li>
+<li>单例模式</li>
+</ul>
+<h3 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h3><ul>
+<li>责任链模式</li>
+<li>命令模式</li>
+<li>解释器模式</li>
+<li>迭代器模式</li>
+<li>中介者模式</li>
+<li>备忘录模式</li>
+<li>观察者模式</li>
+<li>状态模式</li>
+<li>策略模式</li>
+<li>模板方法模式</li>
+<li>访问者模式</li>
+</ul>
+<h3 id="软件设计原则"><a href="#软件设计原则" class="headerlink" title="软件设计原则"></a>软件设计原则</h3><ul>
+<li>单一职责原则</li>
+<li>开闭原则</li>
+<li>里氏代换原则</li>
+<li>依赖倒转原则</li>
+<li>接口隔离原则</li>
+<li>合成服用原则</li>
+<li>迪米特法则</li>
+</ul>
+<h5 id="单一职责原则："><a href="#单一职责原则：" class="headerlink" title="单一职责原则："></a>单一职责原则：</h5><p>一个类应该尽可能只有一个职责，不同的类承担不同的职责,如果一个类拥有了多个职责的话，就考虑分开他们</p>
+<p>例子：我们设计一个订单列表，列表分为待支付、待收货、已收货等列表，那我们是写一个类，使用if判断是哪个类型，然后请求相应的数据，还是写多个类，分别执行各自的功能呢。很多人会觉的写一个类比较省事，但是过多的判断条件，各种职责冗余到一个类中真的好吗，如果待支付列表需要加一些特殊的功能呢，待收货也需要加一些功能呢，那这个类是不是变得条件判断异常的多。所以还是写成多个类，实现各自的逻辑比较好。其实另外我们写列表的Cell，也是一个道理，分成几种类型的Cell去写，而不是一个Cell实现几种类型。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OrderList</span>: <span class="title">NSObject</span> </span>&#123;<span class="comment">//订单列表</span></span><br><span class="line">    <span class="keyword">var</span> waitPayList: <span class="type">WaitPayList?</span><span class="comment">//待支付</span></span><br><span class="line">    <span class="keyword">var</span> waitGoodsList: <span class="type">WaitGoodsList?</span><span class="comment">//待收货</span></span><br><span class="line">    <span class="keyword">var</span> receivedGoodsList: <span class="type">ReceivedGoodsList?</span><span class="comment">//已收货</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WaitPayList</span>: <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WaitGoodsList</span>: <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReceivedGoodsList</span>: <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">例子作者：jackyshan</span><br><span class="line">链接：https:<span class="comment">//www.jianshu.com/p/e5c69c7b8c00</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="开放闭合原则"><a href="#开放闭合原则" class="headerlink" title="开放闭合原则"></a>开放闭合原则</h5><p>所有的类或者函数模块都可扩展而无需更改原有的代码，应该尽可能使用继承或者组合的方式去扩展类的功能。</p>
+<p>例子：我们设计支付功能的时候，会用到不同的支付方式，我们可以选择在支付的时候使用判断支付条件然后使用不同的支付方式，然而这种设计真的好吗。如果我们添加了一个支付方法或者删除了一个支付方法是不是要改动pay方法的逻辑，那每一次的调整都要改动pay方法的逻辑是不是不合理了，依据开闭原则具体做法应该是设计扩展支付方式来实现不同的支付。</p>
+<p>修改之前的代码 用if去判断选择哪种支付方式，每次增加否需要进入到类去修改，以便增加一个支付方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import Foundation</span><br><span class="line"></span><br><span class="line">class PayHelper &#123;</span><br><span class="line">    func pay(send: PaySendModel) -&gt; Void &#123;</span><br><span class="line">        if send.type == 0 &#123;</span><br><span class="line">            //支付宝支付</span><br><span class="line">        &#125;</span><br><span class="line">        else if send.type == 1 &#123;</span><br><span class="line">            //微信支付</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class PaySendModel &#123;</span><br><span class="line">    var type: Int = 0</span><br><span class="line">    var info: [String: AnyHashable]?</span><br><span class="line">&#125;</span><br><span class="line">例子作者：jackyshan</span><br><span class="line">链接：https://www.jianshu.com/p/e5c69c7b8c00</span><br></pre></td></tr></table></figure>
+
+<p>修改之后 支付方式的类实现支付流程的协议，调用者只需要根据PaySendModel的type去找到对应的支付方式，扩展的时候也只需要实现协议就行了</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PayHelper</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> processors: [<span class="type">Int</span>: <span class="type">PayProcessor</span>]?</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pay</span><span class="params">(send: PaySendModel)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> processors = processors <span class="keyword">else</span> &#123;<span class="keyword">return</span>&#125;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> payProcessor: <span class="type">PayProcessor</span> = processors[send.type] <span class="keyword">else</span> &#123;<span class="keyword">return</span>&#125;</span><br><span class="line">        </span><br><span class="line">        payProcessor.handle(send: send)<span class="comment">//支付</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PaySendModel</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> type: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> info: [<span class="type">String</span>: <span class="type">AnyHashable</span>]?</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">PayProcessor</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">handle</span><span class="params">(send: PaySendModel)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AliPayProcessor</span>: <span class="title">PayProcessor</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">handle</span><span class="params">(send: PaySendModel)</span></span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WeChatPayProcessor</span>: <span class="title">PayProcessor</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">handle</span><span class="params">(send: PaySendModel)</span></span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="里氏提换原则"><a href="#里氏提换原则" class="headerlink" title="里氏提换原则"></a>里氏提换原则</h5><p>子类可以在任何地方替换基类，而程序不会受到影响，这种继承关系的建模才合理</p>
+<p>例子：我们定义汽车的基类，基类里面有行驶的方法，现在我们有个宝马车，宝马车继承汽车基类，也有行驶方法。现在我们想知道宝马车的行驶速度是多少，该怎么设计呢。</p>
+<p>修改之前,我们重写了run方法 run的行为发生了改变，不满足里氏替换</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"汽车跑起来了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaoMaCar</span>: <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.run()</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"当前行驶速度是80Km/h"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改之后</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"汽车跑起来了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaoMaCar</span>: <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">showSpeed</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"当前行驶速度是80Km/h"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a>接口隔离原则</h5><p>一个类实现的接口里面，不应该包含他不需要实现的方法，应该将接口拆分成更小的更具体的接口</p>
+<p>例子：我们定义一个汽车接口，要求实现run等方法。</p>
+<p>修改之前 部分车实现自己不应该或者说没有的功能playMusic</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">ICar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">showSpeed</span><span class="params">()</span></span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">playMusic</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>: <span class="title">ICar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"汽车跑起来了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">showSpeed</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"当前行驶速度是80Km/h"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">playMusic</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"播放音乐"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改之后</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IProfessionalCar</span> </span>&#123;<span class="comment">//具备一般功能的车</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">showSpeed</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IEntertainingCar</span> </span>&#123;<span class="comment">//具备娱乐功能的车</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">showSpeed</span><span class="params">()</span></span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">playMusic</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SangTaNaCar</span>: <span class="title">IProfessionalCar</span> </span>&#123;<span class="comment">//桑塔纳轿车</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"汽车跑起来了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">showSpeed</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"当前行驶速度是80Km/h"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaoMaCar</span>: <span class="title">IEntertainingCar</span> </span>&#123;<span class="comment">//宝马轿车</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"汽车跑起来了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">showSpeed</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"当前行驶速度是80Km/h"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">playMusic</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"播放音乐"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="依赖倒置原则"><a href="#依赖倒置原则" class="headerlink" title="依赖倒置原则"></a>依赖倒置原则</h5><p>高层模块不应该依赖底层模块，二者都应该依赖其抽象，抽象不应该依赖细节，细节应该依赖抽象</p>
+<p>例子：我们给汽车加油，实现能够加90号的汽油，如果没有，就加93号的汽油。</p>
+<p>修改前 car高层依赖了具体的油的低层实现</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> gaso: Gasoline90)</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"加90号汽油"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> gaso: Gasoline93)</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"加93号汽油"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline90</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline93</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改之后</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> gaso: IGasoline)</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"加\(gaso.name)汽油"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline90</span>: <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"90号"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline93</span>: <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"93号"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="迪米特法则"><a href="#迪米特法则" class="headerlink" title="迪米特法则"></a>迪米特法则</h5><p>一个对象应该对其他对象保持最少的了解，实现高内聚，低耦合</p>
+<p>例子：实现一个给汽车加油的设计，使的我们可以随时保证加油的质量过关。</p>
+<p>修改之前,在人的类里面做了判断 实际我们不应该关心这个，只关心加油这件事</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> car: <span class="type">Car?</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> gaso: IGasoline)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> gaso.isQuality == <span class="literal">true</span> &#123;<span class="comment">//如果汽油质量过关，我们就给汽车加油</span></span><br><span class="line">            car?.refuel(gaso)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> gaso: IGasoline)</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"加\(gaso.name)汽油"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> isQuality: <span class="type">Bool</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline90</span>: <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"90号"</span></span><br><span class="line">    <span class="keyword">var</span> isQuality: <span class="type">Bool</span> = <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline93</span>: <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"93号"</span></span><br><span class="line">    <span class="keyword">var</span> isQuality: <span class="type">Bool</span> = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改后</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;<span class="comment">//给车加油的人</span></span><br><span class="line">    <span class="keyword">var</span> car: <span class="type">Car?</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> worker: WorkerInPetrolStation, <span class="number">_</span> gaso: IGasoline)</span></span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> car = car <span class="keyword">else</span> &#123;<span class="keyword">return</span>&#125;</span><br><span class="line">        </span><br><span class="line">        worker.refuel(car, gaso)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WorkerInPetrolStation</span> </span>&#123;<span class="comment">//加油站工作人员</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> car: Car, <span class="number">_</span> gaso: IGasoline)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> gaso.isQuality == <span class="literal">true</span> &#123;<span class="comment">//如果汽油质量过关，我们就给汽车加油</span></span><br><span class="line">            car.refuel(gaso)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">refuel</span><span class="params">(<span class="number">_</span> gaso: IGasoline)</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"加\(gaso.name)汽油"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> isQuality: <span class="type">Bool</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline90</span>: <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"90号"</span></span><br><span class="line">    <span class="keyword">var</span> isQuality: <span class="type">Bool</span> = <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gasoline93</span>: <span class="title">IGasoline</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"93号"</span></span><br><span class="line">    <span class="keyword">var</span> isQuality: <span class="type">Bool</span> = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="组合复用原则"><a href="#组合复用原则" class="headerlink" title="组合复用原则"></a>组合复用原则</h5><p>在一个新的对象里面使用一些已有的对象，使之成为新对象的一部分，新的对象通过向这些对象的委派达到复用已有功能的目的。它的设计原则是：要尽量使用合成/聚合，尽量不要使用继承。</p>
+<blockquote>
+<p>待补充</p>
+</blockquote>
+<hr>
+<h5 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h5><p>提供一个接口，用于创建与某些对象相关或依赖于某些对象的类家族，而又不需要指定它们的具体类。<strong>通过这种模式可以去除客户代码和来自工厂的具体对象细节之间的耦合关系。</strong></p>
+<p>类簇是一种把一个公共的抽象超类下的一些私有的具体子类组合在一起的架构。抽象超类负责声明创建私有子类实例的方法，会根据被调用方法的不同分配恰当的具体子类，每个返回的对象都可能属于不同的私有子类。</p>
+<p>Cocoa将类簇限制在数据存储可能因环境而变的对象生成上。Foundation框架为NSString、NSData、NSDictionary、NSSet、和NSArray对象定义了类簇。公共超类包括上述的不可变类和与其相互补充的可变类NSMutableString、NSMutableData、NSMutableDictionary、NSMutableSet、和NSMutableArray。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GzCity</span> </span>&#123;<span class="comment">//广州市有两个啤酒厂</span></span><br><span class="line">    <span class="keyword">var</span> abstractFactory1: <span class="type">IAbstractFactory?</span></span><br><span class="line">    <span class="keyword">var</span> abstractFactory2: <span class="type">IAbstractFactory?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IAbstractFactory</span> </span>&#123;<span class="comment">//抽象工厂</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProductA</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProductB</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BearProduct</span>: <span class="title">IProduct</span> </span>&#123;<span class="comment">//啤酒产品</span></span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"啤酒"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteFactory1</span>: <span class="title">IAbstractFactory</span> </span>&#123;<span class="comment">//啤酒工厂1</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProductA</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">BearProduct</span>()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProductB</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">BearProduct</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteFactory2</span>: <span class="title">IAbstractFactory</span> </span>&#123;<span class="comment">//啤酒工厂2</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProductA</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">BearProduct</span>()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProductB</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">BearProduct</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>待补充</p>
+</blockquote>
+<h5 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h5><p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IBuilder</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProduct</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BeerProduct</span>: <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"啤酒"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Director</span> </span>&#123;<span class="comment">//领导</span></span><br><span class="line">    <span class="keyword">var</span> builder: <span class="type">ConcreteBuilder?</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">construct</span><span class="params">()</span></span> &#123;<span class="comment">//指导生产</span></span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> product = builder?.createProduct() <span class="keyword">else</span> &#123;<span class="keyword">return</span>&#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"生产产品"</span> + product.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteBuilder</span>: <span class="title">IBuilder</span> </span>&#123;<span class="comment">//生产者</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createProduct</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">BeerProduct</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>待补充</p>
+</blockquote>
+<h5 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h5><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method 使一个类的实例化延迟到其子类。</p>
+<p>当一个类不知道它所必须创建的对象的类的时候。</p>
+<p>当一个类希望由它的子类来指定它所创建的对象的时候。</p>
+<p>当类将创建对象的职责委托给多个帮助子类中的某一个，并且你希望将哪一个帮助子类是代理者这一信息局部化的时候。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteCreator</span>: <span class="title">ICreator</span> </span>&#123;<span class="comment">//生产者</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">factoryMethod</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">ConcreteProduct</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">ICreator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">factoryMethod</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteProduct</span>: <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"啤酒"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h5><p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prototype: <span class="type">IPrototype!</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">operation</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> prototype.clone()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IPrototype</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">clone</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteProduct</span>: <span class="title">IProduct</span>, <span class="title">IPrototype</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"啤酒"</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">clone</span><span class="params">()</span></span> -&gt; <span class="type">IProduct</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> p = <span class="type">ConcreteProduct</span>()</span><br><span class="line">        p.name = name</span><br><span class="line">        <span class="keyword">return</span> p</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h5><p>全局只有一个</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> instance: <span class="type">Singleton</span> = <span class="type">Singleton</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h5><p>就是降一个类的接口转换成另外一个客户端希望的接口，使得原来不能在一起工作的类在一起工作</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListAdaper</span>&lt;<span class="title">T</span>&gt;: <span class="title">UITableViewDelegate</span>, <span class="title">UITableViewDataSource</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> cellClick: ((<span class="number">_</span> obj: <span class="type">T</span>) -&gt; <span class="type">Void</span>)?</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> tableView: <span class="type">UITableView</span>) &#123;</span><br><span class="line">        tableView.delegate = <span class="keyword">self</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ...</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, didSelectRowAt indexPath: IndexPath)</span></span> &#123;</span><br><span class="line">        cellClick?(datas[indexPath.row])</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到以上代码，大大简化了接口的复杂度，适配回调给我们的接口是我们关心和使用的到的就行了。节约了很多的代码成本，增加了维护性。</p>
+<h5 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h5><p>将抽象部分与它的实现部分分离，使它们都可以独立地变化。</p>
+<p>例子：<br>花园里有一朵牵牛花和一朵牡丹花，牵牛花开会吸引蜜蜂来采蜜，牡丹花开会吸引蝴蝶来采蜜。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IAbstractInsect</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bloomImp</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">IAbstractFlower</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> insect: <span class="type">IAbstractInsect?</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bloom</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QianniuHua</span>: <span class="title">IAbstractFlower</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> insect: <span class="type">IAbstractInsect?</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bloom</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"牵牛花开了"</span>)</span><br><span class="line">        insect?.bloomImp()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MudanHua</span>: <span class="title">IAbstractFlower</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> insect: <span class="type">IAbstractInsect?</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bloom</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"牡丹花开了"</span>)</span><br><span class="line">        insect?.bloomImp()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Butterfly</span>: <span class="title">IAbstractInsect</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bloomImp</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"蝴蝶来了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bee</span>: <span class="title">IAbstractInsect</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bloomImp</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"蜜蜂来了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> qianniu = <span class="type">QianniuHua</span>.<span class="keyword">init</span>()</span><br><span class="line">qianniu.insect = <span class="type">Bee</span>.<span class="keyword">init</span>()</span><br><span class="line">qianniu.bloom()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mudan = <span class="type">MudanHua</span>.<span class="keyword">init</span>()</span><br><span class="line">mudan.insect = <span class="type">Butterfly</span>.<span class="keyword">init</span>()</span><br><span class="line">mudan.bloom()</span><br></pre></td></tr></table></figure>
+
+<h5 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h5><p>这种模式将互相关联的对象合成为树结构，以表现部分-全部的层次结构。它使客户代码可以统一地处理单独的对象和多个对象的合成结果。</p>
+<p>合成对象是模型-视图-控制器聚集模式的一部分。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Composite</span>: <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> subComposites: <span class="type">NSMutableArray</span> = &#123;<span class="type">NSMutableArray</span>()&#125;()</span><br><span class="line">    <span class="keyword">var</span> parentComposite: <span class="type">Composite?</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addComposite</span><span class="params">(comp: Composite)</span></span> &#123;</span><br><span class="line">        subComposites.add(comp)</span><br><span class="line">        comp.parentComposite = <span class="keyword">self</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">removeCompositeAtIndex</span><span class="params">(index:Int)</span></span>  &#123;</span><br><span class="line">        subComposites.remove(at: index)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">removeComposite</span><span class="params">(comp: Composite)</span></span>  &#123;</span><br><span class="line">        subComposites.remove(comp)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">removeFromParent</span><span class="params">()</span></span>  &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>.parentComposite != <span class="literal">nil</span>) &#123;</span><br><span class="line">            <span class="keyword">self</span>.parentComposite?.removeComposite(comp: <span class="keyword">self</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="装饰模式"><a href="#装饰模式" class="headerlink" title="装饰模式"></a>装饰模式</h5><blockquote>
+<p>iOS类别</p>
+</blockquote>
+<h5 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h5><p>这种模式为子系统中的一组接口提供统一的接口。外观模式定义一个更高级别的接口，通过减少复杂度和隐藏子系统之间的通讯和依赖性，使子系统更加易于使用</p>
+<p>NSImage类为装载和使用基于位图（比如JPEG、PNG、或者TIFF格式）或向量（EPS或PDF格式）的图像提供统一的接口。NSImage可以为同一个图像保持多个表示，不同的表示对应于不同类型的NSImageRep对象。NSImage可以自动选择适合于特定数据类型和显示设备的表示。同时，它隐藏了图像操作和选择的细节，使客户代码可以交替使用很多不同的表示</p>
+<p>在生活中很多地方也用到外观模式，比如购买基金，我们从基金机构那里购买基金，然后他们帮我们管理我们的基金，去操作和运行，我们只管购买和卖出就行了，而不用去管他们内部</p>
+<h5 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h5><p>运用共享技术有效地支持大量细粒度的对象。</p>
+<p>适用性</p>
+<p>一个应用程序使用了大量的对象。</p>
+<p>完全由于使用大量的对象，造成很大的存储开销。</p>
+<p>对象的大多数状态都可变为外部状态。</p>
+<p>如果删除对象的外部状态，那么可以用相对较少的共享对象取代很多组对象。</p>
+<p>应用程序不依赖于对象标识。由于Flyweight对象可以被共享，对于概念上明显有别的对象，标识测试将返回真值。</p>
+<p>例子：我们在一个界面上生成1000个花，共有5种花，实现方式如下。</p>
+<p>修改前</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用普通模式</span></span><br><span class="line">    <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        @autoreleasepool &#123;</span><br><span class="line">            <span class="type">CGRect</span> screenBounds = [[<span class="type">UIScreen</span> mainScreen] bounds];</span><br><span class="line">            <span class="type">CGFloat</span> x = (arc4random() % (<span class="type">NSInteger</span>)screenBounds.size.width);</span><br><span class="line">            <span class="type">CGFloat</span> y = (arc4random() % (<span class="type">NSInteger</span>)screenBounds.size.height);</span><br><span class="line">            <span class="type">NSInteger</span> minSize = <span class="number">10</span>;</span><br><span class="line">            <span class="type">NSInteger</span> maxSize = <span class="number">50</span>;</span><br><span class="line">            <span class="type">CGFloat</span> size = (arc4random() % (maxSize - minSize + <span class="number">1</span>)) + minSize;</span><br><span class="line">            <span class="type">CGRect</span> area = <span class="type">CGRectMake</span>(x, y, size, size);</span><br><span class="line"></span><br><span class="line">            <span class="type">FlowerType</span> flowerType = arc4random() % kTotalNumberOfFlowerTypes;</span><br><span class="line">            <span class="comment">//新建对象</span></span><br><span class="line">            <span class="type">UIImageView</span> *imageview = [<span class="keyword">self</span> flowerViewWithType:flowerType];</span><br><span class="line">            imageview.frame = area;</span><br><span class="line">            [<span class="keyword">self</span>.view addSubview:imageview];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="type">UIImageView</span> *)flowerViewWithType:(<span class="type">FlowerType</span>)type</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">UIImageView</span> *flowerView = <span class="literal">nil</span>;</span><br><span class="line">    <span class="type">UIImage</span> *flowerImage;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (type)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> kAnemone:</span><br><span class="line">            flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"anemone.png"</span>];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> kCosmos:</span><br><span class="line">            flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"cosmos.png"</span>];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> kGerberas:</span><br><span class="line">            flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"gerberas.png"</span>];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> kHollyhock:</span><br><span class="line">            flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"hollyhock.png"</span>];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> kJasmine:</span><br><span class="line">            flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"jasmine.png"</span>];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> kZinnia:</span><br><span class="line">            flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"zinnia.png"</span>];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    flowerView = [[<span class="type">UIImageView</span> alloc]initWithImage:flowerImage];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> flowerView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改之后</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">import</span> &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#<span class="keyword">import</span> &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@interface <span class="type">FlowerView</span> : <span class="type">UIImageView</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void) drawRect:(<span class="type">CGRect</span>)rect;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">==================</span><br><span class="line"></span><br><span class="line">#<span class="keyword">import</span> "FlowerView.h"</span><br><span class="line">#<span class="keyword">import</span> &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@implementation <span class="type">FlowerView</span></span><br><span class="line"></span><br><span class="line">- (void) drawRect:(<span class="type">CGRect</span>)rect</span><br><span class="line">&#123;</span><br><span class="line">  [<span class="keyword">self</span>.image drawInRect:rect];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">import</span> &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#<span class="keyword">import</span> &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">typedef <span class="class"><span class="keyword">enum</span>  </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">  kAnemone,</span><br><span class="line">  kCosmos,</span><br><span class="line">  kGerberas,</span><br><span class="line">  kHollyhock,</span><br><span class="line">  kJasmine,</span><br><span class="line">  kZinnia,</span><br><span class="line">  kTotalNumberOfFlowerTypes</span><br><span class="line">&#125; <span class="type">FlowerType</span>;</span><br><span class="line"></span><br><span class="line">@interface <span class="type">FlowerFactory</span> : <span class="type">NSObject</span> </span><br><span class="line">&#123;</span><br><span class="line">  @<span class="keyword">private</span></span><br><span class="line">  <span class="type">NSMutableDictionary</span> *flowerPool_;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="type">UIImageView</span> *) flowerViewWithType:(<span class="type">FlowerType</span>)type;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">======================</span><br><span class="line"></span><br><span class="line">#<span class="keyword">import</span> "FlowerFactory.h"</span><br><span class="line">#<span class="keyword">import</span> "FlowerView.h"</span><br><span class="line"></span><br><span class="line">@implementation <span class="type">FlowerFactory</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (<span class="type">UIImageView</span> *)flowerViewWithType:(<span class="type">FlowerType</span>)type</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (flowerPool_ == <span class="literal">nil</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    flowerPool_ = [[<span class="type">NSMutableDictionary</span> alloc] </span><br><span class="line">                   initWithCapacity:kTotalNumberOfFlowerTypes];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">UIImageView</span> *flowerView = [flowerPool_ objectForKey:[<span class="type">NSNumber</span></span><br><span class="line">                                                  numberWithInt:type]];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (flowerView == <span class="literal">nil</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">UIImage</span> *flowerImage;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (type) </span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">case</span> kAnemone:</span><br><span class="line">        flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"anemone.png"</span>];</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> kCosmos:</span><br><span class="line">        flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"cosmos.png"</span>];</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> kGerberas:</span><br><span class="line">        flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"gerberas.png"</span>];</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> kHollyhock:</span><br><span class="line">        flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"hollyhock.png"</span>];</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> kJasmine:</span><br><span class="line">        flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"jasmine.png"</span>];</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> kZinnia:</span><br><span class="line">        flowerImage = [<span class="type">UIImage</span> imageNamed:@<span class="string">"zinnia.png"</span>];</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    flowerView = [[<span class="type">FlowerView</span> alloc] </span><br><span class="line">                   initWithImage:flowerImage];</span><br><span class="line">    [flowerPool_ setObject:flowerView </span><br><span class="line">                    forKey:[<span class="type">NSNumber</span> numberWithInt:type]];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> flowerView;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">import</span> "ViewController.h"</span><br><span class="line">#<span class="keyword">import</span> "FlowerFactory.h"</span><br><span class="line">#<span class="keyword">import</span> "FlyweightView.h"</span><br><span class="line">#<span class="keyword">import</span> &lt;objc/runtime.h&gt;</span><br><span class="line">#<span class="keyword">import</span> &lt;malloc/malloc.h&gt;</span><br><span class="line">@interface <span class="type">ViewController</span> ()</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation <span class="type">ViewController</span></span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用享元模式</span></span><br><span class="line">    <span class="type">FlowerFactory</span> *factory = [[<span class="type">FlowerFactory</span> alloc] <span class="keyword">init</span>];</span><br><span class="line">    <span class="type">NSMutableArray</span> *flowerList = [[<span class="type">NSMutableArray</span> alloc]</span><br><span class="line">                                   initWithCapacity:<span class="number">500</span>];</span><br><span class="line">    <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        @autoreleasepool &#123;</span><br><span class="line">            <span class="type">FlowerType</span> flowerType = arc4random() % kTotalNumberOfFlowerTypes;</span><br><span class="line">            <span class="comment">//重复利用对象</span></span><br><span class="line">            <span class="type">UIImageView</span> *flowerView = [factory flowerViewWithType:flowerType];</span><br><span class="line"></span><br><span class="line">            <span class="type">CGRect</span> screenBounds = [[<span class="type">UIScreen</span> mainScreen] bounds];</span><br><span class="line">            <span class="type">CGFloat</span> x = (arc4random() % (<span class="type">NSInteger</span>)screenBounds.size.width);</span><br><span class="line">            <span class="type">CGFloat</span> y = (arc4random() % (<span class="type">NSInteger</span>)screenBounds.size.height);</span><br><span class="line">            <span class="type">NSInteger</span> minSize = <span class="number">10</span>;</span><br><span class="line">            <span class="type">NSInteger</span> maxSize = <span class="number">50</span>;</span><br><span class="line">            <span class="type">CGFloat</span> size = (arc4random() % (maxSize - minSize + <span class="number">1</span>)) + minSize;</span><br><span class="line"></span><br><span class="line">            <span class="type">CGRect</span> area = <span class="type">CGRectMake</span>(x, y, size, size);</span><br><span class="line">            <span class="comment">//新建对象</span></span><br><span class="line">            <span class="type">NSValue</span> *key = [<span class="type">NSValue</span> valueWithCGRect:area];</span><br><span class="line">            <span class="comment">//新建对象</span></span><br><span class="line">            <span class="type">NSDictionary</span> *dic =   [<span class="type">NSDictionary</span> dictionaryWithObject:flowerView forKey:key];</span><br><span class="line">            [flowerList addObject:dic];</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">FlyweightView</span> *view = [[<span class="type">FlyweightView</span> alloc]initWithFrame:<span class="keyword">self</span>.view.bounds];</span><br><span class="line">    view.flowerList = flowerList;</span><br><span class="line">    <span class="keyword">self</span>.view = view;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">import</span> &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface <span class="type">FlyweightView</span> : <span class="type">UIView</span> </span><br><span class="line"></span><br><span class="line">@property (nonatomic, retain) <span class="type">NSArray</span> *flowerList;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">==================</span><br><span class="line"></span><br><span class="line">#<span class="keyword">import</span> "FlyweightView.h"</span><br><span class="line">#<span class="keyword">import</span> "FlowerView.h"</span><br><span class="line"></span><br><span class="line">@implementation <span class="type">FlyweightView</span></span><br><span class="line"></span><br><span class="line">extern <span class="type">NSString</span> *<span class="type">FlowerObjectKey</span>, *<span class="type">FlowerLocationKey</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (void)drawRect:(<span class="type">CGRect</span>)rect </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">NSDictionary</span> *dic <span class="keyword">in</span> <span class="keyword">self</span>.flowerList)</span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">      <span class="type">NSValue</span> *key = (<span class="type">NSValue</span> *)[dic allKeys][<span class="number">0</span>];</span><br><span class="line">      <span class="type">FlowerView</span> *flowerView = (<span class="type">FlowerView</span> *)[dic allValues][<span class="number">0</span>];</span><br><span class="line">      <span class="type">CGRect</span> area = [key <span class="type">CGRectValue</span>];</span><br><span class="line">      [flowerView drawRect:area];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<h5 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h5><blockquote>
+<p>待补充</p>
+</blockquote>
+<hr>
+<h5 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h5><p>使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它为止。</p>
+<blockquote>
+<p>iOS事件响应链<br>Application Kit框架中包含一个称为响应者链的架构。该链由一系列响应者对象（就是从NSResponder继承下来的对象）组成，事件（比如鼠标点击）或者动作消息沿着链进行传递并（通常情况下）最终被处理。如果给定的响应者对象不处理特定的消息，就将消息传递给链中的下一个响应者。响应者在链中的顺序通常由视图的层次结构来决定，从层次较低的响应者对象向层次较高的对象传递，顶点是管理视图层次结构的窗口对象，窗口对象的委托对象，或者全局的应用程序对象。事件和动作消息在响应者链中的确切传递路径是不尽相同的。一个应用程序拥有的响应者链可能和它拥有的窗口（甚至是局部层次结构中的视图对象）一样多，但每次只能有一个响应者链是活动的—也就是与当前活动窗口相关联的那个响应链。</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DutyHandle</span> : <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">    <span class="comment">/// 下一个</span></span><br><span class="line">    <span class="keyword">var</span> next : <span class="type">DutyHandle?</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/// 处理请求操作</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">handleRequest</span><span class="params">(str:String)</span></span> &#123;</span><br><span class="line">        <span class="comment">/// 如果可以则直接处理</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>.canDealWithRequest(str: str)) &#123;</span><br><span class="line">            <span class="built_in">print</span>(str)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">/// 否则如果有下一个，则下一个进行处理判断</span></span><br><span class="line">            <span class="keyword">if</span> ((next) != <span class="literal">nil</span>) &#123;</span><br><span class="line">                next?.handleRequest(str: str)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/// 判断能否处理请求</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">canDealWithRequest</span><span class="params">(str:String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h5><blockquote>
+<p>不太理解 待补充</p>
+</blockquote>
+<h5 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h5><p>// 待更新</p>
+<p>参考作者：jackyshan<br>链接：<a href="https://www.jianshu.com/p/e5c69c7b8c00" target="_blank" rel="noopener">https://www.jianshu.com/p/e5c69c7b8c00</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Henrs</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="http://yoursite.com/2019/05/21/设计模式/" title="设计模式">http://yoursite.com/2019/05/21/设计模式/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/计算机思想/" rel="tag"># 计算机思想</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/29/组件化准备工作之CocoaPods私有库创建/" rel="next" title="cocoaPods私有库的创建">
+                <i class="fa fa-chevron-left"></i> cocoaPods私有库的创建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/19/iOS常用运行时实现/" rel="prev" title="iOS常用运行时实现">
+                iOS常用运行时实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Henrs</p>
+              <div class="site-description motion-element" itemprop="description">安安静静写代码， 要什么自行车</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Henrs" title="GitHub &rarr; https://github.com/Henrs" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:henrs@foxmail.com" title="E-Mail &rarr; mailto:henrs@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构型模式"><span class="nav-number">1.0.1.</span> <span class="nav-text">结构型模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建型模式"><span class="nav-number">1.0.2.</span> <span class="nav-text">创建型模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行为型模式"><span class="nav-number">1.0.3.</span> <span class="nav-text">行为型模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件设计原则"><span class="nav-number">1.0.4.</span> <span class="nav-text">软件设计原则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单一职责原则："><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">单一职责原则：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开放闭合原则"><span class="nav-number">1.0.4.0.2.</span> <span class="nav-text">开放闭合原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#里氏提换原则"><span class="nav-number">1.0.4.0.3.</span> <span class="nav-text">里氏提换原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#接口隔离原则"><span class="nav-number">1.0.4.0.4.</span> <span class="nav-text">接口隔离原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#依赖倒置原则"><span class="nav-number">1.0.4.0.5.</span> <span class="nav-text">依赖倒置原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迪米特法则"><span class="nav-number">1.0.4.0.6.</span> <span class="nav-text">迪米特法则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合复用原则"><span class="nav-number">1.0.4.0.7.</span> <span class="nav-text">组合复用原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#抽象工厂模式"><span class="nav-number">1.0.4.0.8.</span> <span class="nav-text">抽象工厂模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#建造者模式"><span class="nav-number">1.0.4.0.9.</span> <span class="nav-text">建造者模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工厂方法模式"><span class="nav-number">1.0.4.0.10.</span> <span class="nav-text">工厂方法模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型模式"><span class="nav-number">1.0.4.0.11.</span> <span class="nav-text">原型模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单例模式"><span class="nav-number">1.0.4.0.12.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#适配器模式"><span class="nav-number">1.0.4.0.13.</span> <span class="nav-text">适配器模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桥接模式"><span class="nav-number">1.0.4.0.14.</span> <span class="nav-text">桥接模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合模式"><span class="nav-number">1.0.4.0.15.</span> <span class="nav-text">组合模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#装饰模式"><span class="nav-number">1.0.4.0.16.</span> <span class="nav-text">装饰模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#外观模式"><span class="nav-number">1.0.4.0.17.</span> <span class="nav-text">外观模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#享元模式"><span class="nav-number">1.0.4.0.18.</span> <span class="nav-text">享元模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代理模式"><span class="nav-number">1.0.4.0.19.</span> <span class="nav-text">代理模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#责任链模式"><span class="nav-number">1.0.4.0.20.</span> <span class="nav-text">责任链模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解释器模式"><span class="nav-number">1.0.4.0.21.</span> <span class="nav-text">解释器模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器模式"><span class="nav-number">1.0.4.0.22.</span> <span class="nav-text">迭代器模式</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+    <div id="sidebar-dimmer"></div>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">henrs</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
